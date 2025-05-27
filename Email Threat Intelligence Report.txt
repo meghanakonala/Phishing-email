@@ -1,0 +1,68 @@
+Email Threat Intelligence Report
+
+1. Summary
+This report analyzes a suspicious email received by a user, purporting to be a file transfer notification from Sendspace regarding an "Urgent RTI Appeal" from the "CENTRAL INFORMATION COMMISSION." The email contains a suspicious download link and poses a high threat of malware delivery, identified as Walthium Grabber.
+
+2. Email Details
+Sender Name: sendspace
+
+Sender Email Address: no-reply@sendspace.com
+
+Claimed Source Domain: info@cic-gov.in
+
+Subject: You have been sent a file (Description: CENTRAL INFORMATION COMMISSION: Urgent RTI Appeal d...)
+
+Date: Sat, 05 March 2025
+
+Attachment Name (claimed): Urgent RTI Appeal.zip (72 KB)
+
+Download Link: https://www.sendspace.com/file/gwdrox
+
+3. Threat Assessment
+Tactic	Threat	SEG Detection
+Link-Based	Walthium Grabber (Information Stealer Malware)	Mimecast; Microsoft ATP
+
+Threat Type: Malware Delivery via ZIP archive
+
+Malware Family: Walthium Grabber – typically used to steal sensitive data such as credentials and session tokens.
+
+Delivery Method: Malicious file hosted on a legitimate file-sharing platform (Sendspace), linked in the email body.
+
+4. Indicators of Compromise (IOCs)
+URL: https://www.sendspace.com/file/gwdrox
+
+Attachment Name (within link): Urgent RTI Appeal.zip
+
+Known Malware Payload: Walthium Grabber (associated with credential theft and system reconnaissance)
+
+5. Threat Actor Tactics (MITRE ATT&CK Mapping)
+Initial Access: T1566.002 - Spearphishing via Link
+
+Execution: [T1059 - Command and Scripting Interpreter]
+
+Credential Access: [T1555 - Credentials from Password Stores]
+
+Exfiltration: [T1041 - Exfiltration Over C2 Channel]
+
+6. Recommended Actions
+Do Not Click the link or download the file.
+
+Quarantine the Email if not already actioned by the security gateway.
+
+Alert Users: Inform potentially targeted users within the organization about this phishing attempt.
+
+Block URL and associated IPs at the network level and in email security tools.
+
+Scan Endpoints for any signs of Walthium Grabber infection.
+
+Report to CERT/CSIRT if applicable within your organization or country.
+
+7. Additional Notes
+Impersonation Risk: The use of "CENTRAL INFORMATION COMMISSION" and a fake “info@cic-gov.in” return path is intended to invoke urgency and legitimacy.
+
+Social Engineering Element: References a Right to Information (RTI) appeal — a plausible legal or bureaucratic trigger to increase the likelihood of user interaction.
+
+Report Prepared By:
+[Meghana]
+Date: 27 May 2025
+Classification: Confidential – Internal Use Only
